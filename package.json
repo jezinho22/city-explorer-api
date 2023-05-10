@@ -1,29 +1,30 @@
 {
-  "name": "city-explorer-api",
-  "version": "1.0.0",
-  "description": "city-explorer-api",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jezinho22/city-explorer-api.git"
-  },
-  "keywords": [
-    "api",
-    "map"
-  ],
-  "author": "jezinho",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jezinho22/city-explorer-api/issues"
-  },
-  "homepage": "https://github.com/jezinho22/city-explorer-api#readme",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "nodemon": "^2.0.22"
-  }
+	"name": "city-explorer-api",
+	"version": "1.0.0",
+	"description": "city weather api",
+	"main": "server.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "nodemon server.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/jezinho22/city-explorer-api.git"
+	},
+	"keywords": [
+		"api",
+		"map"
+	],
+	"author": "jezinho",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/jezinho22/city-explorer-api/issues"
+	},
+	"homepage": "https://github.com/jezinho22/city-explorer-api#readme",
+	"dependencies": {
+		"cors": "^2.8.5",
+		"dotenv": "^16.0.3",
+		"express": "^4.18.2",
+		"nodemon": "^2.0.22"
+	}
 }
