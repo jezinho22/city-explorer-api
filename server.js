@@ -18,25 +18,29 @@ function filterData(lon, lat, searchQuery) {
 			(location) => location.lon == lon && location.lat == lat
 		);
 	}
-
 	return result;
+}
+// functions to put together weather forecast data to send user
+function dayForecast(day) {
+	return {
+		date: day.datetime,
+		description: `Low of ${day.low_temp} degrees rising to high of ${
+			day.max_temp
+		} with ${day.weather.description.toLowerCase()}`,
+	};
 }
 
 function setupForecast(dataToReturn) {
-	let todaysWeather = dataToReturn[0].data[2];
-
-	let today = todaysWeather.datetime;
-	let description = `Low of ${
-		todaysWeather.low_temp
-	} degrees rising to high of ${
-		todaysWeather.max_temp
-	} with ${todaysWeather.weather.description.toLowerCase()}`;
-
-	let dayWeather = { today: today, description: description };
-	return dayWeather;
+	let array = [];
+	for (i = 0; i < dataToReturn[0].data.length; i++) {
+		array.push(dayForecast(dataToReturn[0].data[i]));
+	}
+	return array;
 }
+
 // endpoint for root
 app.get("/", (request, response) => response.json("You reached the root"));
+
 // endpoint for weather
 app.get("/weather", (request, response) => {
 	let dataToReturn = weather;
